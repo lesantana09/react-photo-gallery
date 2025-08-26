@@ -125,7 +125,7 @@ export default function InputSingleFile({
             </>
         ) : (
             <>
-                <div>{replaceBy}</div>
+                {replaceBy}
                 <div className={`
                     flex gap-3 items-center
                     border border-solid border-border-primary mt-5
