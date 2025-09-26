@@ -20,18 +20,18 @@ export default function PhotoWidget({photo, loading}: PhotoWidgetProps) {
              <ImagePreview
                 src={`/images/${photo.imageId}`}
                 title={photo.title}
-                imageClassName="w-[13.563rem] h-[13.563rem] rounded-lg"
+                imageClassName="w-[10.875rem] h-[10.875rem] rounded-lg"
 
              />
         ) : (
-            <Skeleton className="w-[13.563rem] h-[13.563rem] rounded-lg" />
+            <Skeleton className="w-[10.875rem] h-[10.875rem] rounded-lg" />
         )}
         
         <div className="flex flex-col gap-2">
             {!loading ? (
                 <Text variant="paragraph-large" className="trucate">{photo.title}</Text>
             ): (
-                <Skeleton className="w-[13.563rem] h-6"/>
+                <Skeleton className="w-[10.875rem] h-6"/>
             )}
 
             <div className="flex gap-1 min-h-[1.375rem]">
@@ -48,7 +48,7 @@ export default function PhotoWidget({photo, loading}: PhotoWidgetProps) {
                 ): (
                    Array.from({length: 1}).map((_, index) => 
                    <Skeleton key={`album-loading${index}`} 
-                   className="w-[13.563rem] h-4 rounded-sm"/>)
+                   className="w-[10.875rem] h-4 rounded-sm"/>)
                 )}
             </div>
         </div>
@@ -61,12 +61,12 @@ export default function PhotoWidget({photo, loading}: PhotoWidgetProps) {
                    
                 })}
             >
-            <Button variant="secondary" className="w-[13.563rem]">
+            <Button variant="secondary" size="sm" className="w-[10.875rem]">
                 Detalhes da Imagem
             </Button>
             </Link>
         ): (
-            <Skeleton className="w-[13.563rem] h-10"/>
+            <Skeleton className="w-[10.875rem] h-8"/>
         )}
     </div>
 }
