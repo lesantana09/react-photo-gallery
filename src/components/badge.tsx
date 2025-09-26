@@ -46,7 +46,7 @@ export const badgeSkeletonVariants = tv({
 });
 
 interface BadgeProps
-	extends React.ComponentProps<"div">,
+	extends Omit<React.HTMLProps<HTMLDivElement>, "size">,
 		VariantProps<typeof badgeVariants> {
 	loading?: boolean;
 }

@@ -15,7 +15,7 @@ export const containerVariants = tv({
 
 interface ContainerProps
 	extends VariantProps<typeof containerVariants>,
-		React.ComponentProps<"div"> {
+		React.HTMLAttributes<HTMLDivElement> {
 	as?: keyof React.JSX.IntrinsicElements;
 }
 

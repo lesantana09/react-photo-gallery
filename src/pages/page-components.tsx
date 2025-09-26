@@ -1,4 +1,4 @@
-import Button from "../components/button";
+import Button, { buttonTextVariants } from "../components/button";
 import ButtonIcon from "../components/button-icon";
 import ChevronLeftIcon from "../assets/icons/chevron-left.svg?react";
 import ChevronRightIcon from "../assets/icons/chevron-right.svg?react";
@@ -9,7 +9,7 @@ import InputText from "../components/input-text";
 import SearchIcon from "../assets/icons/search.svg?react";
 import InputCheckbox  from "../components/input-checkbox";
 import InputSingleFile from "../components/input-single-file";
-import ImageFilePreview from "../components/image-file-preview";
+import ImagePreview from "../components/image-preview";
 import { useForm } from "react-hook-form";
 import { 
 	Dialog, 
@@ -43,6 +43,9 @@ export default function PageComponents() {
 				<Button variant="primary" size="sm">
 					Button
 				</Button>
+				<Text className={buttonTextVariants({variant: "secondary", size: "md"})}>
+					Detalhes da Imagem
+				</Text>
 			</div>
 
 			<div className="flex gap-3">
@@ -84,7 +87,7 @@ export default function PageComponents() {
 					form={form} 
 					allowedFileTypes={['png', 'jpg', 'jpeg', 'webp']}
 					maxFileSizeInMB={50}
-					replaceBy={<ImageFilePreview src={ImageFileSource} alt="Image Preview"/>}
+					replaceBy={<ImagePreview src={ImageFileSource} alt="Image Preview"/>}
 					{...form.register('file')}
 				/>
 			</div>
@@ -102,7 +105,7 @@ export default function PageComponents() {
 								form={form} 
 								allowedFileTypes={['png', 'jpg', 'jpeg', 'webp']}
 								maxFileSizeInMB={50}
-								replaceBy={<ImageFilePreview src={ImageFileSource} alt="Image Preview"/>}
+								replaceBy={<ImagePreview src={ImageFileSource} alt="Image Preview"/>}
 								{...form.register('file')}
 							/>
 						</DialogBody>
